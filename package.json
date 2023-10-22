@@ -1,0 +1,14 @@
+{
+  "name": "food-app",
+  "version": "1.0.0",
+  "description": "1. Introduction \r 2. Install development tools\r 3. Create Angular App\r     1. Create project's folder\r     2. Install @angular/cli\r     3. Create App as front-end\r 4. Add Header\r     1. Generate Component\r     2. Add Html\r     3. Add Css",
+  "engines": {
+    "node": ">=18 <19"
+},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend/built && node server.js",
+    "prebuild": "cd backend && npm run build",
+    "build": "cd front-end && npm run build"
+  }
+ }
