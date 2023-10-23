@@ -7,6 +7,7 @@ import foodRouter from './routers/food.router';
 import userRouter from "./routers/user.router";
 import orderRouter from './routers/order.router'
 import { dbConnect } from './configs/database.config';
+import path from 'path';
 
 dbConnect();
 
@@ -70,6 +71,11 @@ app.use("/api/orders",orderRouter)
 //     user.token = token;
 //     return user;
 // }
+
+app.use(express.static('public'));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname,'public', 'index.html'))
+})
 
 
 
