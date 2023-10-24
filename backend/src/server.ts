@@ -8,6 +8,7 @@ import userRouter from "./routers/user.router";
 import orderRouter from './routers/order.router'
 import { dbConnect } from './configs/database.config';
 import path from 'path';
+import { log } from 'console';
 
 dbConnect();
 
@@ -72,9 +73,11 @@ app.use("/api/orders",orderRouter)
 //     return user;
 // }
 
-app.use(express.static('public'));
+app.use(express.static('src'));
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname,'public', 'index.html'))
+    res.sendFile(path.join(__dirname,'src', 'index.html'))
+    console.log(__dirname);
+    
 })
 
 
