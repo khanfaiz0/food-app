@@ -73,9 +73,9 @@ app.use("/api/orders",orderRouter)
 //     return user;
 // }
 
-app.use(express.static(path.join(__dirname,('/../front-end'))));
+app.use(express.static(path.join(__dirname,('/front-end'))));
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/../front-end/src/index.html'))
+    res.sendFile(path.join(__dirname, '/front-end/src/index.html'))
     console.log(__dirname);
     
 })
