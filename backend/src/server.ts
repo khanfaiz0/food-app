@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 dotenv.config();
 import express from "express";
 import cors from "cors";
@@ -13,6 +13,8 @@ import { log } from 'console';
 
 dbConnect();
 
+const url = process.env.MONGO_URI || ''
+
 const app = express();
 //localhost:4200
 app.use(express.json())
@@ -24,7 +26,7 @@ app.use(cors({
 app.use("/api/foods",foodRouter)
 app.use("/api/users",userRouter)
 app.use("/api/orders",orderRouter)
-app.use("/api/empolyees",employeeRouter)
+app.use("/api/employees",employeeRouter)
 
 
 // app.get("/api/foods",(req, res) => {
@@ -87,5 +89,7 @@ app.get('*', (req, res) => {
 const port = 5000;
 app.listen(port, ()=>{
     console.log(`Server is running on ${port}`);
+    console.log(url);
+    
 })
 

@@ -1,6 +1,8 @@
 import { connect, ConnectOptions } from "mongoose";
+import { env } from "process";
 
 export const dbConnect = () =>{
+    
     connect(process.env.MONGO_URI!, {
         useNewUrlParser:true,
         useUnifiedTopology: true

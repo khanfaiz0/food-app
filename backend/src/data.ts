@@ -90,3 +90,17 @@ export const sample_users: any[] = [
     isAdmin: false,
   },
 ];
+
+export const sample_employees: any[] = [
+  {
+    firstname:'Faizan',
+    lastname: 'khan',
+    birthdate: '2000-01-04',
+    gender:'Male',
+    education: 'post-graduate',
+    profile: 'pic.img',
+    company: 'string',
+    jobExperience: 4,
+    salary:5,
+  }
+]
