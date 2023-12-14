@@ -1,9 +1,22 @@
 import {Schema, model} from 'mongoose';
 
-export const EmployeeSchema = new Schema(
+export interface Employee{
+    firstname:string;
+    lastname: string;
+    birthdate: Date;
+    gender:string;
+    education: string;
+    profile: string;
+    company: string;
+    jobExperience: number;
+    salary:number;
+
+}
+
+export const EmployeeSchema = new Schema<Employee>(
     {
         firstname: {type: String, required:true},
-        lastname: {type: Number, required:true},
+        lastname: {type: String, required:true},
         birthdate: {type: Date},
         gender: {type: String},
         education: {type: String, required:true},
@@ -23,4 +36,4 @@ export const EmployeeSchema = new Schema(
     }
 );
 
-export const EmployeeModel = model('employee', EmployeeSchema);
+export const EmployeeModel = model<Employee>('employee', EmployeeSchema);
