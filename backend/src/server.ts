@@ -23,6 +23,7 @@ app.use(cors({
 app.use("/api/foods",foodRouter)
 app.use("/api/users",userRouter)
 app.use("/api/orders",orderRouter)
+app.use("/api/empolyees")
 
 
 // app.get("/api/foods",(req, res) => {
