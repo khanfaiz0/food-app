@@ -5,7 +5,8 @@ import cors from "cors";
 //import { sample_foods, sample_tags, sample_users } from "./data";
 import foodRouter from './routers/food.router';
 import userRouter from "./routers/user.router";
-import orderRouter from './routers/order.router'
+import orderRouter from './routers/order.router';
+import employeeRouter from "./routers/employee.router"
 import { dbConnect } from './configs/database.config';
 import path from 'path';
 import { log } from 'console';
@@ -23,7 +24,7 @@ app.use(cors({
 app.use("/api/foods",foodRouter)
 app.use("/api/users",userRouter)
 app.use("/api/orders",orderRouter)
-app.use("/api/empolyees")
+app.use("/api/empolyees",employeeRouter)
 
 
 // app.get("/api/foods",(req, res) => {
