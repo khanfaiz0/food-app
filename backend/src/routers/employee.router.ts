@@ -35,8 +35,7 @@ router.post('/create',asyncHandler(
             return;
         }
 
-        
-
+        try{
         const newEmp:Employee ={
             firstname,
             lastname,
@@ -48,12 +47,13 @@ router.post('/create',asyncHandler(
             jobExperience,
             salary
         }
-
         const dbUser = await EmployeeModel.create(newEmp);
         console.log(dbUser);
-        return
-        
-
+        res.status(200).send("crated!")
+      }catch(error){
+        console.error('Error in /create route:', error);
+        res.status(500).send('Internal Server Error');
+      }
     }
   ))
 
