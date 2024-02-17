@@ -21,6 +21,7 @@ app.use(express.json())
 app.use(cors({
     credentials:true,
     origin: '*',
+    methods: 'GET,PUT,POST,DELETE',
 }));
 
 app.use("/api/foods",foodRouter)
