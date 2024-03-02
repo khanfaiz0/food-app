@@ -57,6 +57,30 @@ router.post('/create',asyncHandler(
     }
   ))
 
+// Assuming you already have the necessary imports and setup
+
+// Update Employee
+router.put('/update/:id', asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const updatedEmp = await EmployeeModel.findByIdAndUpdate(id, req.body, { new: true });
+
+    if (!updatedEmp) {
+      // If the employee with the specified ID doesn't exist
+      res.status(404).send("Employee not found");
+      return;
+    }
+
+    console.log(updatedEmp);
+    res.status(200).send("Updated!");
+  } catch (error) {
+    console.error('Error in /update route:', error);
+    res.status(500).send('Internal Server Error');
+  }
+}));
+
+
   router.delete('/:id', asyncHandler(
     async (req, res) => {
     const { id } = req.params;
