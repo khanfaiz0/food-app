@@ -15,15 +15,15 @@ export interface Employee{
 
 export const EmployeeSchema = new Schema<Employee>(
     {
-        firstname: {type: String, required:true},
-        lastname: {type: String, required:true},
+        firstname: {type: String},
+        lastname: {type: String},
         birthdate: {type: Date},
         gender: {type: String},
-        education: {type: String, required:true},
-        profile: {type: String, required:true},
-        company: {type: String, required:true},
-        jobExperience: {type: Number, required:true},
-        salary: {type: Number, required:true},
+        education: {type: String},
+        profile: {type: String},
+        company: {type: String},
+        jobExperience: {type: Number},
+        salary: {type: Number},
 
     },{
         timestamps: true,

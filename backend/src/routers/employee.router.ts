@@ -28,6 +28,8 @@ router.get("/",asyncHandler(
 
 router.post('/create',asyncHandler(
     async(req,res)=>{
+      console.log(req.body);
+      
         const {firstname, lastname, birthdate, gender, education, profile, company, jobExperience, salary} =req.body
         const user = await EmployeeModel.findOne({firstname});
         if(user){
