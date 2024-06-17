@@ -87,7 +87,7 @@ app.get('*', (req, res) => {
 
 
 
-const port = 5000;
+const port = 1000;
 app.listen(port, ()=>{
     console.log(`Server is running on ${port}`);
     console.log(url);
